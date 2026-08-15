@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sowndarya Karthick U | M.Sc. Chemistry Graduate</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+  :root{
+    --navy:#120E27;
+    --navy-soft:#1B1640;
+    --purple:#7C5CFC;
+    --purple-deep:#5B3DE0;
+    --lavender:#B9A6FF;
+    --bg:#F6F4FC;
+    --card:#FFFFFF;
+    --ink:#181330;
+    --muted:#6B6480;
+    --line:#E7E2F6;
+    --ok:#3FBF8F;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4,.display{font-family:'Space Grotesk',sans-serif;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  section{scroll-margin-top:84px;}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    display:inline-block;
+    font-size:12px;
+    letter-spacing:.14em;
+    font-weight:600;
+    color:var(--purple-deep);
+    background:#EFE9FF;
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:18px;
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:var(--navy);
+    color:#fff;
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 32px;max-width:1200px;margin:0 auto;
+  }
+  .brand{display:flex;flex-direction:column;line-height:1.1;}
+  .brand .script{
+    font-family:'Space Grotesk',sans-serif;
+    font-style:italic;font-weight:600;color:var(--lavender);font-size:20px;
+  }
+  .brand .name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;letter-spacing:.04em;}
+  .brand .tag{font-size:9.5px;letter-spacing:.18em;color:#8B84B0;margin-top:2px;}
+
+  .nav-links{display:flex;gap:30px;}
+  .nav-links a{
+    font-size:14.5px;font-weight:500;color:#D6D2EE;
+    position:relative;padding-bottom:4px;transition:color .2s;
+  }
+  .nav-links a:hover, .nav-links a.active{color:#fff;}
+  .nav-links a.active::after{
+    content:"";position:absolute;left:0;right:0;bottom:-6px;height:3px;border-radius:3px;
+    background:var(--purple);
+  }
+  .nav-actions{display:flex;align-items:center;gap:10px;}
+  .icon-btn{
+    width:38px;height:38px;border-radius:10px;background:#251E4A;
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;transition:background .2s;border:1px solid #33285f;
+  }
+  .icon-btn:hover{background:var(--purple);}
+  .resume-btn{
+    display:flex;align-items:center;gap:8px;
+    background:#251E4A;border:1px solid #33285f;
+    padding:9px 16px;border-radius:10px;font-size:14px;font-weight:600;color:#fff;
+    transition:background .2s;
+  }
+  .resume-btn:hover{background:var(--purple);}
+  .burger{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg,#EFEBFB 0%, var(--bg) 55%);
+    padding:70px 0 40px;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;
+  }
+  .hero h1{font-size:56px;line-height:1.05;font-weight:700;color:var(--ink);}
+  .hero h1 .accent{color:var(--purple-deep);}
+  .hero .role{
+    margin-top:16px;font-size:19px;font-weight:600;color:var(--navy-soft);
+    display:inline-block;position:relative;padding-bottom:10px;
+  }
+  .hero .role::after{
+    content:"";position:absolute;left:0;bottom:0;width:60px;height:3px;background:var(--purple);border-radius:3px;
+  }
+  .hero p.desc{margin-top:18px;font-size:16px;color:var(--muted);max-width:460px;}
+  .cta-row{display:flex;align-items:center;gap:18px;margin-top:32px;flex-wrap:wrap;}
+  .meet-btn{
+    display:flex;align-items:center;gap:10px;
+    background:var(--navy);color:#fff;border:none;
+    padding:15px 26px;border-radius:14px;font-size:15px;font-weight:600;
+    cursor:pointer;transition:transform .15s, background .2s;
+  }
+  .meet-btn:hover{background:var(--purple-deep);transform:translateY(-2px);}
+  .play-dot{
+    width:26px;height:26px;border-radius:50%;background:var(--purple);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .click-note{font-family:'Space Grotesk',sans-serif;font-style:italic;color:var(--purple-deep);font-size:14px;display:flex;align-items:center;gap:6px;}
+
+  .contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px;}
+  .ccard{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:16px 16px;display:flex;align-items:center;gap:12px;
+    box-shadow:0 6px 18px rgba(90,70,180,.06);
+  }
+  .ccard .ico{
+    width:38px;height:38px;border-radius:10px;background:#EFE9FF;color:var(--purple-deep);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .ccard .lab{font-size:12px;color:var(--muted);font-weight:600;}
+  .ccard .val{font-size:13.5px;font-weight:600;color:var(--ink);word-break:break-word;}
+
+  /* Hero visual: illustrated avatar / molecule scene */
+  .hero-visual{position:relative;display:flex;justify-content:center;align-items:center;min-height:420px;}
+  .orb{
+    position:absolute;width:340px;height:340px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #C9B8FF 0%, var(--purple) 55%, var(--purple-deep) 100%);
+    filter:blur(2px);opacity:.9;
+  }
+  .flask-wrap{position:relative;z-index:2;}
+
+  /* Avatar chat card */
+  .avatar-card{
+    position:absolute;
+    top:-10px;right:-10px;
+    width:300px;background:#fff;border-radius:20px;
+    box-shadow:0 20px 50px rgba(30,20,80,.25);
+    overflow:hidden;
+    transform:translateY(20px);
+    opacity:0;pointer-events:none;
+    transition:all .35s ease;
+    z-index:20;
+  }
+  .avatar-card.open{opacity:1;transform:translateY(0);pointer-events:all;}
+  .avatar-card .a-head{
+    background:var(--purple-deep);color:#fff;padding:12px 16px;
+    display:flex;align-items:center;justify-content:space-between;font-size:13.5px;font-weight:600;
+  }
+  .avatar-card .a-head span{display:flex;align-items:center;gap:8px;}
+  .avatar-card .a-head button{background:none;border:none;color:#fff;font-size:16px;cursor:pointer;opacity:.8;}
+  .avatar-card .a-head button:hover{opacity:1;}
+  .avatar-photo{
+    height:150px;background:linear-gradient(135deg,#2A2158,#4B3A99);
+    display:flex;align-items:center;justify-content:center;position:relative;
+  }
+  .monogram{
+    width:84px;height:84px;border-radius:50%;background:#fff;color:var(--purple-deep);
+    display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;
+    font-weight:700;font-size:30px;box-shadow:0 0 0 5px rgba(255,255,255,.25);
+  }
+  .a-body{padding:16px;font-size:13.5px;color:var(--ink);}
+  .a-body b{color:var(--purple-deep);}
+  .a-actions{display:flex;gap:8px;padding:0 16px 14px;}
+  .a-actions button{
+    flex:1;border:none;border-radius:9px;padding:9px 8px;font-size:12.5px;font-weight:600;cursor:pointer;
+  }
+  .a-actions .primary{background:var(--purple);color:#fff;}
+  .a-actions .primary:hover{background:var(--purple-deep);}
+  .a-actions .secondary{background:#F1EEFB;color:var(--purple-deep);}
+  .a-actions .secondary:hover{background:#E4DEF9;}
+  .listening{
+    font-size:11.5px;color:var(--muted);text-align:center;padding:0 0 12px;display:flex;
+    align-items:center;justify-content:center;gap:6px;
+  }
+  .dots span{width:4px;height:4px;border-radius:50%;background:var(--purple);display:inline-block;margin:0 1px;animation:blink 1.2s infinite;}
+  .dots span:nth-child(2){animation-delay:.2s;}
+  .dots span:nth-child(3){animation-delay:.4s;}
+  @keyframes blink{0%,80%,100%{opacity:.2;}40%{opacity:1;}}
+
+  /* ---------- QUICK CARDS STRIP ---------- */
+  .quick-strip{background:var(--navy);padding:46px 0 54px;color:#fff;}
+  .quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .qcard{
+    background:#1B1640;border:1px solid #2C2560;border-radius:16px;padding:22px;
+    transition:transform .2s, border-color .2s;
+  }
+  .qcard:hover{transform:translateY(-4px);border-color:var(--purple);}
+  .qcard .qicon{
+    width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--purple),#9B7BFF);
+    display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+  }
+  .qcard h4{font-size:16px;margin-bottom:6px;}
+  .qcard p{font-size:13.5px;color:#B8B2D9;margin-bottom:12px;}
+  .qcard .link{font-size:13px;font-weight:600;color:var(--lavender);display:inline-flex;align-items:center;gap:5px;}
+
+  /* ---------- GENERIC SECTION ---------- */
+  .section{padding:78px 0;}
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .section-head h2{font-size:32px;font-weight:700;}
+  .section-head p{color:var(--muted);margin-top:10px;font-size:15.5px;}
+
+  /* About */
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:start;}
+  .about-card{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;
+    box-shadow:0 10px 30px rgba(90,70,180,.06);
+  }
+  .about-card h4{font-size:14px;color:var(--purple-deep);letter-spacing:.06em;margin-bottom:10px;text-transform:uppercase;}
+  .about-card p{color:var(--muted);font-size:15px;}
+  .traits{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+  .trait{
+    background:#EFE9FF;color:var(--purple-deep);font-size:13px;font-weight:600;
+    padding:8px 14px;border-radius:999px;
+  }
+
+  /* Education timeline */
+  .timeline{border-left:3px solid var(--line);padding-left:28px;display:flex;flex-direction:column;gap:34px;}
+  .tl-item{position:relative;}
+  .tl-item::before{
+    content:"";position:absolute;left:-37px;top:4px;width:14px;height:14px;border-radius:50%;
+    background:var(--purple);border:3px solid #fff;box-shadow:0 0 0 3px var(--purple);
+  }
+  .tl-item .deg{font-size:18px;font-weight:700;}
+  .tl-item .inst{color:var(--muted);font-size:14px;margin-top:4px;}
+  .tl-item .meta{margin-top:8px;display:flex;gap:14px;flex-wrap:wrap;}
+  .pill{
+    background:#F1EEFB;color:var(--purple-deep);font-size:12.5px;font-weight:600;
+    padding:5px 12px;border-radius:999px;
+  }
+
+  /* Skills */
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .skill-card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;
+    box-shadow:0 8px 22px rgba(90,70,180,.05);
+  }
+  .skill-card .qicon{
+    width:44px;height:44px;border-radius:12px;background:#EFE9FF;color:var(--purple-deep);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  }
+  .skill-card h4{font-size:16px;margin-bottom:10px;}
+  .skill-card ul li{
+    font-size:14px;color:var(--muted);padding:5px 0;display:flex;align-items:center;gap:8px;
+  }
+  .skill-card ul li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--purple);flex-shrink:0;}
+
+  /* Project */
+  .project-card{
+    background:linear-gradient(135deg,var(--navy) 0%, #2B2260 100%);
+    color:#fff;border-radius:22px;padding:42px;display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:center;
+  }
+  .project-card .ptag{
+    display:inline-block;font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--lavender);
+    background:rgba(185,166,255,.14);padding:6px 14px;border-radius:999px;margin-bottom:14px;
+  }
+  .project-card h3{font-size:26px;margin-bottom:14px;}
+  .project-card p{color:#C6C1E6;font-size:15px;}
+  .flask-illustration{display:flex;justify-content:center;}
+
+  /* Certifications */
+  .cert-card{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;
+    display:flex;align-items:center;gap:22px;box-shadow:0 10px 26px rgba(90,70,180,.06);
+  }
+  .cert-badge{
+    width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,var(--purple),#9B7BFF);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;
+  }
+  .cert-card h4{font-size:18px;margin-bottom:4px;}
+  .cert-card p{color:var(--muted);font-size:14px;}
+
+  /* Contact */
+  .contact-wrap{
+    background:var(--navy);border-radius:24px;padding:56px;color:#fff;
+    display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;
+  }
+  .contact-wrap h2{font-size:30px;margin-bottom:14px;}
+  .contact-wrap p{color:#B8B2D9;font-size:15px;max-width:420px;}
+  .contact-list{display:flex;flex-direction:column;gap:16px;}
+  .contact-row{
+    display:flex;align-items:center;gap:14px;background:#1B1640;border:1px solid #2C2560;
+    padding:16px 18px;border-radius:14px;
+  }
+  .contact-row .ico{
+    width:40px;height:40px;border-radius:10px;background:var(--purple);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .contact-row .lab{font-size:12px;color:#9791BC;font-weight:600;}
+  .contact-row .val{font-size:14.5px;font-weight:600;}
+
+  footer{
+    background:var(--navy);color:#8B84B0;padding:22px 0;border-top:1px solid #2C2560;
+    display:flex;justify-content:space-between;align-items:center;font-size:13px;
+  }
+  footer a{color:var(--lavender);}
+
+  .scroll-top{
+    position:fixed;bottom:26px;right:26px;width:48px;height:48px;border-radius:50%;
+    background:var(--purple);color:#fff;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 26px rgba(124,92,252,.5);cursor:pointer;z-index:60;border:none;
+    opacity:0;pointer-events:none;transition:opacity .25s;
+  }
+  .scroll-top.show{opacity:1;pointer-events:all;}
+
+  @media(max-width:980px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{margin-top:60px;min-height:340px;}
+    .avatar-card{position:relative;top:0;right:0;margin:0 auto;}
+    .about-grid{grid-template-columns:1fr;}
+    .skills-grid{grid-template-columns:1fr 1fr;}
+    .quick-grid{grid-template-columns:1fr 1fr;}
+    .project-card{grid-template-columns:1fr;}
+    .contact-wrap{grid-template-columns:1fr;padding:36px;}
+    .nav-links{display:none;}
+    .burger{display:block;}
+  }
+  @media(max-width:600px){
+    .hero h1{font-size:38px;}
+    .contact-cards{grid-template-columns:1fr;}
+    .skills-grid{grid-template-columns:1fr;}
+    .quick-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <span class="script">Sowndarya</span>
+      <span class="name">KARTHICK U</span>
+      <span class="tag">M.SC. CHEMISTRY</span>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#project">Project</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="resume-btn" href="#contact">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Resume
+      </a>
+      <a class="icon-btn" href="mailto:sowndaryasooriyan@gmail.com" title="Email">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg>
+      </a>
+      <a class="icon-btn" href="tel:+919952548453" title="Call">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+    </div>
+    <button class="burger" id="burger">&#9776;</button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">HELLO, I'M</span>
+      <h1>Sowndarya<br><span class="accent">Karthick U</span></h1>
+      <div class="role">M.Sc. Chemistry Graduate | Fresher</div>
+      <p class="desc">Passionate about chemistry and its applications. Eager to contribute, learn and grow in a dynamic organization that fosters learning and success.</p>
+
+      <div class="cta-row">
+        <button class="meet-btn" id="meetBtn">
+          <span class="play-dot">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+          </span>
+          Meet My Avatar
+        </button>
+        <span class="click-note">&#8592; Click to talk</span>
+      </div>
+
+      <div class="contact-cards">
+        <div class="ccard">
+          <div class="ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div>
+            <div class="lab">Phone</div>
+            <div class="val">+91 99525 48453</div>
+          </div>
+        </div>
+        <div class="ccard">
+          <div class="ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg></div>
+          <div>
+            <div class="lab">Email</div>
+            <div class="val">sowndaryasooriyan@gmail.com</div>
+          </div>
+        </div>
+        <div class="ccard">
+          <div class="ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <div class="lab">Location</div>
+            <div class="val">Theni, Tamil Nadu, India</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="orb"></div>
+      <div class="flask-wrap">
+        <svg width="260" height="320" viewBox="0 0 260 320" fill="none">
+          <ellipse cx="130" cy="300" rx="95" ry="14" fill="#5B3DE0" opacity=".18"/>
+          <path d="M108 30 h44 v70 l52 130 c8 20 -6 40 -28 40 H84 c-22 0 -36 -20 -28 -40 l52 -130 z" fill="#EFE9FF" stroke="#7C5CFC" stroke-width="4"/>
+          <path d="M92 190 h76 l24 60 c6 15 -4 30 -20 30 H88 c-16 0 -26 -15 -20 -30 z" fill="#B9A6FF" opacity=".85"/>
+          <rect x="100" y="18" width="60" height="16" rx="4" fill="#7C5CFC"/>
+          <circle cx="130" cy="230" r="7" fill="#fff" opacity=".8"/>
+          <circle cx="150" cy="250" r="5" fill="#fff" opacity=".6"/>
+          <circle cx="115" cy="255" r="4" fill="#fff" opacity=".7"/>
+          <circle cx="40" cy="60" r="5" fill="#7C5CFC"/>
+          <circle cx="220" cy="90" r="7" fill="#B9A6FF"/>
+          <circle cx="210" cy="230" r="5" fill="#5B3DE0"/>
+          <circle cx="30" cy="220" r="6" fill="#7C5CFC"/>
+        </svg>
+      </div>
+
+      <div class="avatar-card" id="avatarCard">
+        <div class="a-head">
+          <span>&#10022; Sowndarya's Avatar</span>
+          <button id="closeAvatar">&times;</button>
+        </div>
+        <div class="avatar-photo"><div class="monogram">SK</div></div>
+        <div class="a-body" id="avatarText">
+          Hi! I'm <b>Sowndarya</b>. I've completed my M.Sc. in Chemistry with 73.60%. I did my academic project on <b>Hair Dye Formulation</b>. I hold a DCA certification and strong MS Office skills. I'm a quick learner and eager to contribute in a dynamic organization. Let me know if you'd like to explore my education, skills or project!
+        </div>
+        <div class="a-actions">
+          <button class="primary" id="speakAgain">&#128264; Speak Again</button>
+          <button class="secondary" id="explorePortfolio">Explore My Portfolio</button>
+        </div>
+        <div class="listening" id="listeningRow">
+          <span id="listeningLabel">Ready</span>
+          <span class="dots"><span></span><span></span><span></span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= QUICK STRIP ================= -->
+<section class="quick-strip">
+  <div class="wrap quick-grid">
+    <a href="#education" class="qcard">
+      <div class="qicon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></div>
+      <h4>Education</h4>
+      <p>M.Sc. Chemistry &mdash; 73.60%</p>
+      <span class="link">View Details &rarr;</span>
+    </a>
+    <a href="#project" class="qcard">
+      <div class="qicon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M9 3h6M10 3v5.5L4.5 18a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L14 8.5V3"/></svg></div>
+      <h4>Academic Project</h4>
+      <p>Hair Dye Formulation &mdash; in-depth study on chemical composition and application</p>
+      <span class="link">View Project &rarr;</span>
+    </a>
+    <a href="#skills" class="qcard">
+      <div class="qicon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <h4>Skills</h4>
+      <p>MS Office, Computer Fundamentals, DCA, Communication &amp; more</p>
+      <span class="link">View Skills &rarr;</span>
+    </a>
+    <a href="#certifications" class="qcard">
+      <div class="qicon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></svg></div>
+      <h4>Certifications</h4>
+      <p>Diploma in Computer Applications (DCA)</p>
+      <span class="link">View Certificate &rarr;</span>
+    </a>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow">ABOUT ME</span>
+      <h2 style="font-size:30px;font-weight:700;">Career Objective</h2>
+      <div class="traits">
+        <span class="trait">Communication &amp; Interpersonal Skills</span>
+        <span class="trait">Team Player</span>
+        <span class="trait">Leadership Potential</span>
+        <span class="trait">Time Management</span>
+        <span class="trait">Adaptability</span>
+        <span class="trait">Quick Learner</span>
+      </div>
+    </div>
+    <div class="about-card">
+      <h4>Objective</h4>
+      <p>To contribute effectively in a dynamic and challenging environment that fosters learning and growth, while utilizing my skills across diverse fields to support organizational success.</p>
+      <br>
+      <h4>Professional Summary</h4>
+      <p>Postgraduate in Chemistry with a solid academic foundation and a keen interest in practical applications. Completed a project on hair dye formulation and holds a Diploma in Computer Applications. Quick learner with MS Office skills, eager to contribute to a dynamic organization and build a successful career.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section class="section" id="education" style="background:#F0ECFB;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">ACADEMIC BACKGROUND</span>
+      <h2>Education</h2>
+      <p>Educational qualifications from secondary school through postgraduation.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="deg">M.Sc. Chemistry</div>
+        <div class="inst">Nadar Saraswathi College of Arts &amp; Science, Theni &mdash; Mother Teresa Women's University, Kodaikanal</div>
+        <div class="meta"><span class="pill">2019 &ndash; 2021</span><span class="pill">CGPA/Percentage: 73.60%</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="deg">B.Sc. Chemistry</div>
+        <div class="inst">Nadar Saraswathi College of Arts &amp; Science, Theni &mdash; Mother Teresa Women's University, Kodaikanal</div>
+        <div class="meta"><span class="pill">2016 &ndash; 2019</span><span class="pill">Percentage: 67.60%</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="deg">Higher Secondary (12th)</div>
+        <div class="inst">P.H.N. Hr. Sec School, Theni &mdash; State Board, Tamil Nadu</div>
+        <div class="meta"><span class="pill">2015 &ndash; 2016</span><span class="pill">Percentage: 71.50%</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="deg">Secondary School (10th)</div>
+        <div class="inst">P.H.N. Hr. Sec School, Theni &mdash; State Board, Tamil Nadu</div>
+        <div class="meta"><span class="pill">2013 &ndash; 2014</span><span class="pill">Percentage: 74.60%</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section class="section" id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">WHAT I BRING</span>
+      <h2>Skills</h2>
+      <p>A blend of technical proficiency and soft skills built through academics and self-learning.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="qicon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h4>Technical Skills</h4>
+        <ul>
+          <li>MS Office (Word, Excel, PowerPoint)</li>
+          <li>Computer fundamentals and applications</li>
+          <li>Diploma in Computer Applications (DCA)</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="qicon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h4>Soft Skills</h4>
+        <ul>
+          <li>Good communication and interpersonal skills</li>
+          <li>Team player with leadership potential</li>
+          <li>Time management and adaptability</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="qicon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></div>
+        <h4>Languages Known</h4>
+        <ul>
+          <li>Tamil</li>
+          <li>English</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECT ================= -->
+<section class="section" id="project" style="background:#F0ECFB;">
+  <div class="wrap">
+    <div class="project-card">
+      <div>
+        <span class="ptag">ACADEMIC PROJECT</span>
+        <h3>Hair Dye Formulation</h3>
+        <p>Conducted an in-depth study on the chemical composition and application of hair dye in textile processing. Explored dyeing techniques, colour fastness, and the environmental impact of synthetic dyes.</p>
+      </div>
+      <div class="flask-illustration">
+        <svg width="180" height="200" viewBox="0 0 180 200" fill="none">
+          <path d="M70 20 h40 v55 l40 95 c6 15 -5 30 -21 30 H51 c-16 0 -27 -15 -21 -30 l40 -95 z" fill="rgba(185,166,255,.15)" stroke="#B9A6FF" stroke-width="3"/>
+          <path d="M58 150 h64 l14 40 c4 12 -4 24 -16 24 H60 c-12 0 -20 -12 -16 -24 z" fill="#7C5CFC" opacity=".8"/>
+          <rect x="64" y="10" width="52" height="14" rx="3" fill="#9B7BFF"/>
+          <circle cx="90" cy="185" r="5" fill="#fff" opacity=".7"/>
+          <circle cx="105" cy="175" r="3" fill="#fff" opacity=".6"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CERTIFICATIONS ================= -->
+<section class="section" id="certifications">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">CREDENTIALS</span>
+      <h2>Certifications</h2>
+    </div>
+    <div class="cert-card">
+      <div class="cert-badge">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></svg>
+      </div>
+      <div>
+        <h4>Diploma in Computer Applications (DCA)</h4>
+        <p>Certified foundational training in computer applications and office productivity tools.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="contact-wrap">
+      <div>
+        <span class="eyebrow" style="background:rgba(185,166,255,.14);color:var(--lavender);">GET IN TOUCH</span>
+        <h2>Let's connect</h2>
+        <p>I'm actively looking for opportunities to begin my career. Feel free to reach out &mdash; I'd love to hear from you.</p>
+      </div>
+      <div class="contact-list">
+        <div class="contact-row">
+          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><div class="lab">Phone</div><div class="val">+91 99525 48453</div></div>
+        </div>
+        <div class="contact-row">
+          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg></div>
+          <div><div class="lab">Email</div><div class="val">sowndaryasooriyan@gmail.com</div></div>
+        </div>
+        <div class="contact-row">
+          <div class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="lab">Location</div><div class="val">Theni, Tamil Nadu, India</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:8px;">
+    <span>&copy; 2026 Sowndarya Karthick U. All Rights Reserved.</span>
+    <span>Built with <a href="#home">care</a></span>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop">&#8593;</button>
+
+<script>
+  // Nav active state on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      const top = sec.offsetTop - 100;
+      if (window.scrollY >= top) current = sec.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+    document.getElementById('scrollTop').classList.toggle('show', window.scrollY > 500);
+  });
+
+  document.getElementById('scrollTop').addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Avatar speak logic
+  const avatarCard = document.getElementById('avatarCard');
+  const meetBtn = document.getElementById('meetBtn');
+  const closeAvatar = document.getElementById('closeAvatar');
+  const speakAgainBtn = document.getElementById('speakAgain');
+  const exploreBtn = document.getElementById('explorePortfolio');
+  const listeningLabel = document.getElementById('listeningLabel');
+
+  const welcomeMsg = "Welcome to my portfolio! I'm Sowndarya. I've completed my M.Sc. in Chemistry with seventy three point six zero percent. I did my academic project on Hair Dye Formulation. I hold a D C A certification and strong M S Office skills. I'm a quick learner and eager to contribute in a dynamic organization. Let me know if you'd like to explore my education, skills, or project!";
+
+  function speak(text) {
+    if (!('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.rate = 0.98;
+    utter.pitch = 1.05;
+    listeningLabel.textContent = 'Speaking...';
+    utter.onend = () => { listeningLabel.textContent = 'Ready'; };
+    window.speechSynthesis.speak(utter);
+  }
+
+  function openAvatar() {
+    avatarCard.classList.add('open');
+    speak(welcomeMsg);
+  }
+
+  meetBtn.addEventListener('click', openAvatar);
+  closeAvatar.addEventListener('click', () => {
+    avatarCard.classList.remove('open');
+    window.speechSynthesis.cancel();
+    listeningLabel.textContent = 'Ready';
+  });
+  speakAgainBtn.addEventListener('click', () => speak(welcomeMsg));
+  exploreBtn.addEventListener('click', () => {
+    document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Mobile nav toggle
+  const burger = document.getElementById('burger');
+  const navLinksEl = document.getElementById('navLinks');
+  burger.addEventListener('click', () => {
+    const isOpen = navLinksEl.style.display === 'flex';
+    navLinksEl.style.display = isOpen ? 'none' : 'flex';
+    navLinksEl.style.flexDirection = 'column';
+    navLinksEl.style.position = 'absolute';
+    navLinksEl.style.top = '64px';
+    navLinksEl.style.left = '0';
+    navLinksEl.style.right = '0';
+    navLinksEl.style.background = 'var(--navy)';
+    navLinksEl.style.padding = '18px 32px';
+    navLinksEl.style.gap = '16px';
+  });
+  navLinksEl.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => { if (window.innerWidth <= 980) navLinksEl.style.display = 'none'; });
+  });
+</script>
+
+</body>
+</html>
